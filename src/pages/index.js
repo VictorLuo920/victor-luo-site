@@ -1,4 +1,5 @@
 import { getSortedPostsData } from "../lib/posts";
+import Link from "next/link";
 
 import {
   Link as ChakraLink,
@@ -17,15 +18,14 @@ import { CTA } from "../components/CTA";
 import { Footer } from "../components/Footer";
 
 export default function Index({ allPostsData }) {
-  console.log(allPostsData);
   return (
     <Container height="100vh">
       <Hero />
       <Main>
         {allPostsData.map(({ id, date, title }) => (
-          <Text>
-            {title}
-          </Text>
+          <Link href={`/posts/${id}`}>
+            <Text>{title}</Text>
+          </Link>
         ))}
         <Text>
           Example repository of <Code>Next.js</Code> + <Code>chakra-ui</Code>.
