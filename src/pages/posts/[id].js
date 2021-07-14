@@ -1,13 +1,14 @@
 import { getAllPostIds, getPostData } from "../../lib/posts";
 
 import { Box, Text } from "@chakra-ui/react";
+import { Container } from "../../components/Container";
 
 export default function Post({ postData }) {
   return (
-    <Box>
+    <Container height="100vh" maxWidth="1140px">
       <Text>{postData.title}</Text>
-      <Box dangerouslySetInnerHTML={{ __html: postData.contentHtml }}></Box>
-    </Box>
+      <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }}/>
+    </Container>
   );
 }
 
