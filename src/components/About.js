@@ -14,8 +14,6 @@ export default function AboutHeader() {
 
   return (
       <Flex
-        paddingX="15px"
-        marginX="auto"
         maxWidth="1140px"
         direction={['column', 'column', 'column', 'row']}
       >

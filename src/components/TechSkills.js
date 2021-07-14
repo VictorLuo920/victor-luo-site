@@ -22,6 +22,7 @@ export default function TechSkills() {
     { skill: 'mongodb', width: '107' },
     { skill: 'postgres', width: '128' },
     { skill: 'python', width: '64' },
+    { skill: 'supabase', width: '107'}
   ];
   return (
     <>

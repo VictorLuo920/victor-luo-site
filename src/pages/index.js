@@ -4,6 +4,7 @@ import Link from "next/link";
 import {
   Link as ChakraLink,
   Text,
+  Heading,
   Code,
   List,
   ListIcon,
@@ -22,10 +23,11 @@ import TechSkills from "../components/TechSkills"
 
 export default function Index({ allPostsData }) {
   return (
-    <Container height="100vh">
+    <Container>
       <Main>
         <AboutHeader />
         <TechSkills />
+        <Heading>List of Blog Posts</Heading>
         {allPostsData.map(({ id, date, title }) => (
           <Link key={id} href={`/posts/${id}`}>
             <ChakraLink>{title}</ChakraLink>
