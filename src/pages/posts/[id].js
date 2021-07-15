@@ -1,13 +1,20 @@
 import { getAllPostIds, getPostData } from "../../lib/posts";
+import Link from "next/link";
 
-import { Box, Text } from "@chakra-ui/react";
+import { Link as ChakraLink, Box, Text, Heading } from "@chakra-ui/react";
 import { Container } from "../../components/Container";
+import { Main } from "../../components/Main";
 
 export default function Post({ postData }) {
   return (
-    <Container height="100vh" maxWidth="1140px">
-      <Text>{postData.title}</Text>
-      <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }}/>
+    <Container height="100vh">
+      <Main>
+        <Heading>{postData.title}</Heading>
+        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <Link href="/">
+          <ChakraLink>Home</ChakraLink>
+        </Link>
+      </Main>
     </Container>
   );
 }
