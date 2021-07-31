@@ -20,16 +20,13 @@ export default function TechSkills() {
     { skill: "node", width: "104" },
     { skill: "express", width: "128" },
     { skill: "mongodb", width: "107" },
-    { skill: "postgres", width: "128" },
+    { skill: "postgresql", width: "128" },
     { skill: "python", width: "64" },
     { skill: "supabase", width: "107" },
   ];
   return (
-    <>
-      <Heading marginBottom="1rem">Tech Skills</Heading>
-      <Text marginBottom="1rem">
-        Below is a quick overview of my the main technologies I use.
-      </Text>
+    <Box>
+      <Heading marginBottom="1rem">Technologies I Use</Heading>
 
       <Flex justifyContent="center" flexWrap="wrap">
         {techSkills.map((icon) => (
@@ -37,12 +34,12 @@ export default function TechSkills() {
             colorMode={colorMode}
             src={`/images/skills/${icon.skill.toLowerCase()}.svg`}
             alt={icon.skill}
-            width={icon.width}
+            width="64px"
             key={icon.skill}
           />
         ))}
       </Flex>
-    </>
+    </Box>
   );
 }
 

@@ -4,23 +4,27 @@ import Link from "next/link";
 import { Link as ChakraLink, Box, Text, Heading } from "@chakra-ui/react";
 import { Container } from "../../components/Container";
 import { Main } from "../../components/Main";
+import { DarkModeSwitch } from "../../components/DarkModeSwitch";
+
 import ChakraUIRenderer from "chakra-ui-markdown-renderer";
 import ReactMarkdown from "react-markdown";
 
 export default function Post({ postData }) {
   return (
-    <Container height="100vh">
-      <Main>
+    <Container>
+      <Main flexGrow="1">
         <Heading>{postData.title}</Heading>
-        {/* <Box dangerouslySetInnerHTML={{ __html: postData.contentHtml }} /> */}
+        <Heading fontSize="md">first published on {postData.date}</Heading>
         <ReactMarkdown
           components={ChakraUIRenderer()}
           children={postData.content}
         />
-        <Link href="/">
-          <ChakraLink>Home</ChakraLink>
+        <Link href="/posts">
+          <ChakraLink>Back to Posts</ChakraLink>
         </Link>
       </Main>
+      <DarkModeSwitch />
+
     </Container>
   );
 }
