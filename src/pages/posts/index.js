@@ -18,7 +18,7 @@ import { DarkModeSwitch } from "../../components/DarkModeSwitch";
 
 export default function Index({ allPostsData }) {
   return (
-    <Container height="100vh">
+    <Container minHeight="100vh">
       <Main>
         <Heading>List of Blog Posts</Heading>
         <UnorderedList>

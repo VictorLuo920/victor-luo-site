@@ -11,7 +11,7 @@ import ReactMarkdown from "react-markdown";
 
 export default function Post({ postData }) {
   return (
-    <Container>
+    <Container minHeight="100vh">
       <Main flexGrow="1">
         <Heading>{postData.title}</Heading>
         <Heading fontSize="md">first published on {postData.date}</Heading>
